@@ -30,8 +30,9 @@ if (home) {
     }
     case "add": {
       const configData = await getConfigData(home);
+      const appendContent = "\n\n" + content
       if (content) {
-        await Deno.writeTextFile(configData, content, { append: true });
+        await Deno.writeTextFile(configData, appendContent, { append: true });
       }
       break;
     }
